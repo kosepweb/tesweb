@@ -1,222 +1,175 @@
-
-<html lang="id">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Perusahaan - Ghaisan Utama Indomedia</title>
+    <meta name="description" content="Contoh website responsif dan kreatif">
+    <title>Website Kreatif dan Responsif</title>
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        /* Reset browser defaults */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-        }
-
-        nav {
-            background-color: #1d1d1d;
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ff6f61;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
+            background-color: #f4f4f4;
         }
 
         header {
-            background: url('your-image.jpg') no-repeat center center/cover;
-            height: 70vh;
-            color: #fff;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
         }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        .logo h1 {
+            margin: 0;
         }
 
-        header p {
-            font-size: 1.2rem;
-            margin-top: 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .about, .services, .contact {
-            padding: 40px 20px;
-            background-color: #fff;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .about h2, .services h2, .contact h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #ff6f61;
-        }
-
-        .about p, .services p {
-            text-align: justify;
-        }
-
-        .services .service-cards {
+        .navbar ul {
+            list-style-type: none;
             display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
             flex-direction: column;
-            gap: 20px;
+            cursor: pointer;
         }
 
-        .services .service-card {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px;
+        }
+
+        .hero {
             text-align: center;
+            padding: 100px 20px;
+            background: #333;
+            color: white;
         }
 
-        .services .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .hero h2 {
+            font-size: 2.5rem;
         }
 
-        .services .service-card p {
-            font-size: 1rem;
+        .hero p {
+            margin: 20px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f44336;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #e53935;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
         }
 
         footer {
-            background-color: #1d1d1d;
-            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px;
+            background: #333;
+            color: white;
         }
 
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .footer-socials a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        @media (min-width: 768px) {
-            header h1 {
-                font-size: 3rem;
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background: #333;
+                transition: all 0.3s;
             }
 
-            header p {
-                font-size: 1.5rem;
+            .navbar ul.active {
+                left: 0;
             }
 
-            .services .service-cards {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 20px;
-            }
-
-            .services .service-card {
-                flex: 1 1 calc(33% - 40px);
+            .hamburger {
+                display: flex;
             }
         }
     </style>
 </head>
-
 <body>
-    <nav>
-        <div class="logo">Ghaisan Utama Indomedia</div>
-        <ul>
-            <li><a href="#about">Tentang Kami</a></li>
-            <li><a href="#services">Layanan</a></li>
-            <li><a href="#contact">Kontak</a></li>
-        </ul>
-    </nav>
-
     <header>
-        <div>
-            <h1>Selamat Datang di Ghaisan Utama Indomedia</h1>
-            <p>Kreativitas tanpa batas, Solusi yang tepat</p>
+        <div class="logo">
+            <h1>Logo</h1>
         </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
     </header>
 
-    <div class="container">
-        <section id="about" class="about">
-            <h2>Tentang Kami</h2>
-            <p>Ghaisan Utama Indomedia adalah perusahaan yang bergerak di bidang industri kreatif, menyediakan layanan terbaik di bidang event organizing, konstruksi, dan multimedia. Dengan pengalaman lebih dari satu dekade, kami berkomitmen untuk memberikan hasil terbaik bagi klien kami.</p>
-        </section>
+    <section id="home">
+        <div class="hero">
+            <h2>Welcome to Our Creative Website</h2>
+            <p>We design with passion and create with love.</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
 
-        <section id="services" class="services">
-            <h2>Layanan Kami</h2>
-            <div class="service-cards">
-                <div class="service-card">
-                    <h3>Event Organizer</h3>
-                    <p>Mengelola berbagai acara formal maupun non-formal dengan sentuhan profesionalisme yang tinggi.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Konstruksi</h3>
-                    <p>Menyediakan solusi konstruksi dari perencanaan hingga pelaksanaan dengan standar kualitas terbaik.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Multimedia</h3>
-                    <p>Menyajikan layanan multimedia yang meliputi fotografi, videografi, dan desain grafis dengan hasil yang memukau.</p>
-                </div>
-            </div>
-        </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>This is a brief description about our company and what we do.</p>
+    </section>
 
-        <section id="contact" class="contact">
-            <h2>Kontak Kami</h2>
-            <p>Hubungi kami untuk informasi lebih lanjut atau konsultasi:</p>
-            <p>Email: <a href="mailto:info@ghaisanindomedia.com">info@ghaisanindomedia.com</a></p>
-            <p>Telepon: <a href="tel:+621234567890">+62 123-4567-890</a></p>
-            <p>Alamat: Jl. Bakti Komp Ruko Bakti Soho Center, Kota Makassar, Sulawesi Selatan</p>
-        </section>
-    </div>
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Details about the services we offer.</p>
+    </section>
 
     <footer>
-        <p>&copy; 2009-2024 Ghaisan Utama Indomedia. All rights reserved.</p>
-        <div class="footer-socials">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="https://wa.me/621234567890" target="_blank">WhatsApp</a>
-        </div>
+        <p>&copy; 2024 Website Kreatif. All rights reserved.</p>
     </footer>
-</body>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navUL = document.querySelector('.navbar ul');
+
+        hamburger.addEventListener('click', () => {
+            navUL.classList.toggle('active');
+        });
+    </script>
+</body>
 </html>
