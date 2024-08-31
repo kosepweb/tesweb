@@ -1,563 +1,538 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contoh website responsif dan kreatif">
-    <title>Website Kreatif dan Responsif</title>
-    <style>
-        /* Reset browser defaults */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #eaeaea;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        nav {
-            background-color: #1d1d1d;
-            color: #fff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s;
-        }
-
-        nav.scrolled {
-            background-color: #333;
-        }
-
-        nav .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            color: #ff6f61;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ff6f61;
-            transform: scale(1.05);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-            url('foto1.jpg') no-repeat center center/cover;
-            height: 100vh;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            padding: 0;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-content p {
-            font-size: 1.4rem;
-            margin-top: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .section {
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            transform: skewY(-4deg);
-            transform-origin: top left;
-            z-index: -1;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            color: #ff6f61;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #ff6f61;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 20px;
-            border-left: 4px solid #ff6f61;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .timeline-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .timeline-item p {
-            margin: 0;
-            color: #666;
-        }
-
-        .services-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .card {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1 1 calc(33% - 40px);
-            margin: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 1.6rem;
-            color: #333;
-        }
-
-        .portfolio-gallery {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-        }
-
-        .gallery-item {
-            flex: 0 0 auto;
-            text-align: center;
-            margin: 0;
-        }
-
-        .gallery-item img {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-
-        .gallery-item img:hover {
-            transform: scale(1.05);
-        }
-
-        footer {
-            background-color: #1d1d1d;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .footer-socials {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .footer-socials a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .footer-socials a:hover {
-            color: #ff6f61;
-        }
-
-        iframe {
-            border: 0;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1001;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nama Perusahaan Anda</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 0;
+    }
+    
+    h1, h2, h3, h4 {
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+    
+    /* Header */
+    header {
+        background: #fff;
+        padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    nav {
+        float: right;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+    
+    nav a:hover {
+        color: #007bff;
+    }
+    
+    /* Hero Section */
+    .hero {
+        background: url('images/hero-bg.jpg') no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        padding-top: 80px;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        animation: fadeInDown 1s ease-in-out;
+    }
+    
+    .hero h1 span {
+        color: #007bff;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    
+    /* About Section */
+    .about {
+        background-color: #f9f9f9;
+        padding: 80px 0;
+    }
+    
+    .about-content {
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+    
+    .about p {
+        margin-bottom: 20px;
+        color: #666;
+    }
+    
+    /* Services Section */
+    .services {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .services-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    
+    .service-item {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        animation: fadeInUp 1s ease-in-out;
+    }
+    
+    .service-item:hover {
+        transform: translateY(-10px);
+    }
+    
+    .service-item img {
+        height: 80px;
+        margin-bottom: 20px;
+    }
+    
+    .service-item h3 {
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+    
+    .service-item p {
+        color: #666;
+    }
+    
+    /* Portfolio Section */
+    .portfolio {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .portfolio-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+    }
+    
+    .portfolio-item {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    
+    .portfolio-item:hover {
+        transform: translateY(-10px);
+    }
+    
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    /* Modal Container */
+    .modal {
+        display: none; /* Hide by default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8); /* Background overlay */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Modal Content */
+    .modal-content {
+        background-color: #fff;
+        margin: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 90%;
+        max-height: 80%;
+        overflow: hidden; /* Hide overflow if needed */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    
+    /* Image inside Modal */
+    .modal-content img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Maintain aspect ratio */
+        display: none;
+    }
+    
+    /* Show the current image */
+    .modal-content img.active {
+        display: block;
+    }
+    
+    /* Close Button */
+    .modal-close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .modal-close:hover,
+    .modal-close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* Navigation Buttons */
+    .modal-prev, .modal-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 50%;
+        z-index: 1001;
+    }
+    
+    .modal-prev {
+        left: 10px;
+    }
+    
+    .modal-next {
+        right: 10px;
+    }
+    
+    /* Responsiveness */
+    @media (max-width: 768px) {
         .modal-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            max-width: 90%;
-            margin: auto;
+            max-width: 95%;
+            max-height: 90%;
         }
-
-        .modal-content img {
-            max-width: 45%;
-            border-radius: 10px;
-            margin: 10px;
-            transition: transform 0.3s;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
         }
-
-        .modal-content img:hover {
-            transform: scale(1.05);
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
         }
-
-        .close:hover,
-        .close:focus {
-            color: #ff6f61;
-            text-decoration: none;
-            cursor: pointer;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-
-        @media only screen and (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-
-            h2 {
-                font-size: 2.2rem;
-            }
-
-            .card {
-                flex: 1 1 calc(100% - 40px);
-            }
-
-            .services-cards,
-            .portfolio-gallery {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .portfolio-gallery {
-                overflow-x: scroll;
-            }
-
-            .modal-content img {
-                max-width: 80%;
-                margin: 5px;
-            }
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
         }
-    </style>
-
+        to {
+            opacity: 1;
+        }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Logo</h1>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
-
-    <section id="home">
-        <div class="hero">
-            <h2>Welcome to Our Creative Website</h2>
-            <p>We design with passion and create with love.</p>
-            <a href="#about" class="cta-button">Learn More</a>
-        </div>
-    </section>
-
-    <section id="about" class="section about">
-        <div class="container">
-            <h2>About Us</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>2009</h3>
-                    <p>Pada tahun 2009, bendera ALPRODUCTION beralih menjadi perusahaan perseorangan. Berfokus pada bidang Event Organizer dan Profesional Exhibition Organizer, kami memulai perjalanan ini dengan pengalaman, kemampuan, dan keterampilan sumber daya manusia yang terlibat sejak awal, sehingga dapat bekerja dengan baik.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2011</h3>
-                    <p>Bisnis berkembang ke berbagai bidang. Pada tahun 2011, terbentuk Media Majalah, Eventku Magazine.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2012</h3>
-                    <p>Terbentuk designeRoom, Konsultan Perencana & Konstruksi, Konsultan Pengawasan, Pelaksana Konstruksi, Pengelolaan Real Estate, Pekerjaan Interior/Eksterior.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2013</h3>
-                    <p>Terbentuk CV. Ghaisan Utama Indomedia yang menaungi berbagai jenis usaha di bidang entertaind dan konstruksi.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2014</h3>
-                    <p>Terbentuk jasa Multimedia (Photo, Video & Design Grafis).</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2015</h3>
-                    <p>Terbentuk Finisia Production, Production House yang memproduksi Film Layar lebar, Series & Iklan Cinematography.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2018</h3>
-                    <p>Terbentuk Kopi Batas (KOBA), PT. Ghaisan Maharga Perkasa & PT. Ghaisan Utama Indoprima.</p>
-                </div>
-                <div class="timeline-item">
-                    <h3>2020</h3>
-                    <p>Terbentuk Yayasan Insan Sahasra Zawawi, dengan brand Gerakan 1.000 Kebaikan. Kami berkomitmen memberikan pelayanan produk dan jasa yang berkualitas, konsisten, dan memiliki nilai tambah demi tercapainya tujuan bersama. Dengan dukungan sumber daya manusia yang berkemampuan tinggi dan berpengalaman di bidang masing-masing, Ghaisan Utama Indomedia mampu menyediakan berbagai jasa di bidang Konstruksi, Multimedia, & Event Organizer dengan prinsip kemitraan yang selalu mengedepankan kualitas dan kepuasan (Value of Money).</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Layanan Kami Section -->
-    <section id="services" class="section services">
-        <div class="container">
-            <h2>VISI, MISI & SERVICES</h2>
-            <div class="services-cards">
-                <div class="card">
-                    <h3>VISI</h3>
-                    <p>Menjadi Pemimpin Industri Kreatif di Indonesia Timur</p>
-                </div>
-                <div class="card">
-                    <h3>MISI</h3>
-                    <p>Menjadi parner bisnis yang Realible dengan menanamkan nilai Profesionalisme dalam menciptakan karya yang mengesankan</p>
-                </div>
-                <div class="card">
-                    <img src="icon2.png" alt="Layanan 1 Icon" style="width: 200px; height: 100px;">
-                    <h3>Event Organizer Services</h3>
-                    <p>DIdirikan tahun 2009, dan sampai sekarang telah menjadi partner terpercaya oleh banyak perusahaan dan pribadi, untuk keperluan event organizing. Mulai dari acara formal ataupun non-formal yang selalu berhasil meninggalkan kesan tersendiri bagi client</p>
-                </div>
-                <div class="card">
-                    <img src="icon23.png" alt="Layanan 2 Icon" style="width: 200px; height: 100px;">
-                    <h3>Contruction Services</h3>
-                    <p>Didirikan ditahun 2012 sampai sekarang, didukung tim teknis dan arsitek berpengalaman, menjadi Konsultan Perencanaan serta Pelaksanaan Konstruksi Perumahaan, Pengelolaan Real Estate, Renovasi Rumah dan Kantor Eksterior/Interior</p>
-                </div>
-                <div class="card">
-                    <img src="icon3.png" alt="Layanan 3 Icon" style="width: 200px; height: 100px;">
-                    <h3>Cinematography Services</h3>
-                    <p>Didirikan ditahun 2015, dan sampai sekarang telah membuat beberapa film layar lebar dengan jumlah penoton yang lebih dari lima ratus ribu orang. Disamping itu Finisia, juga telah memproduksi beberapa video, berupa compay profile, comercial dan lain-lain.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    < <!-- Portfolio Section -->
-    <section id="portfolio" class="section portfolio">
-        <div class="container">
-            <h2>Portofolio</h2>
-            <div class="portfolio-gallery">
-                <!-- Project 1 -->
-                <div class="gallery-item">
-                    <img id="projectLogo1" src="finisia.png" alt="Project 1 Logo">
-                </div>
-                <!-- Project 2 -->
-                <div class="gallery-item">
-                    <img id="projectLogo2" src="LOGO-ALPRO1.png" alt="Project 2 Logo">
-                </div>
-                <!-- Project 3 -->
-                <div class="gallery-item">
-                    <img id="projectLogo3" src="drlogo.png" alt="Project 3 Logo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Website Kreatif. All rights reserved.</p>
-    </footer>
-
-      <!-- Modal for Gallery 1 -->
-      <div id="galleryModal1" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <img src="up1.jpg" alt="Image 1">
-            <img src="halomakassar.jpg" alt="Image 2">
-            <img src="anakmudapalsu.jpg" alt="Image 3">
-            <img src="keluarmain.jpg" alt="Image 4">
-            <img src="up2.jpg" alt="Image 5">
-        </div>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="Logo Perusahaan" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang Kami</a></li>
+          <li><a href="#services">Layanan</a></li>
+          <li><a href="#portfolio">Portofolio</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Modal for Gallery 2 -->
-    <div id="galleryModal2" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <img src="giias15.jpg" alt="Image 1">
-            <img src="giias16.jpg" alt="Image 2">
-            <img src="GIIAS17.jpg" alt="Image 3">
-            <img src="GIIAS18.jpg" alt="Image 4">
-            <img src="giias19.jpg" alt="Image 5">
-            <img src="rei.jpg" alt="Image 5">
-            <img src="karangtaruna.jpg" alt="Image 5">
-            <img src="FEED BMO 1 copy.jpg" alt="Image 5">
-        </div>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1>Selamat Datang di <span>Perusahaan Anda</span></h1>
+      <p>
+        Kami menyediakan solusi terbaik untuk kebutuhan bisnis Anda dengan
+        pelayanan profesional dan terpercaya.
+      </p>
+      <a href="#contact" class="btn">Hubungi Kami</a>
     </div>
+  </section>
 
-    <!-- Modal for Gallery 3 -->
-    <div id="galleryModal3" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content">
-            <img src="dr1.jpg" alt="Image 1">
-            <img src="dr2.jpg" alt="Image 2">
-            <img src="dr3.jpg" alt="Image 3">
-            <img src="dr4.jpg" alt="Image 4">
-            <img src="dr5.jpg" alt="Image 5">
-            <img src="dr6.jpg" alt="Image 4">
-        </div>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container about-content">
+      <h2>Tentang Kami</h2>
+      <p>
+        Kami adalah perusahaan yang berkomitmen untuk memberikan layanan
+        terbaik dan solusi inovatif untuk kebutuhan bisnis Anda. Tim kami
+        terdiri dari para ahli di berbagai bidang yang siap membantu Anda.
+      </p>
     </div>
+  </section>
 
-    <script>
-        // Navbar scroll effect
-        window.onscroll = function () {
-            var navbar = document.getElementById('navbar');
-            if (window.pageYOffset > 100) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        };
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Layanan Kami</h2>
+      <div class="services-wrapper">
+        <div class="service-item">
+          <img src="images/service1.png" alt="Layanan 1" />
+          <h3>Layanan 1</h3>
+          <p>
+            Penjelasan tentang layanan 1 yang kami tawarkan kepada
+            pelanggan kami.
+          </p>
+        </div>
+        <div class="service-item">
+          <img src="images/service2.png" alt="Layanan 2" />
+          <h3>Layanan 2</h3>
+          <p>
+            Penjelasan tentang layanan 2 yang kami tawarkan kepada
+            pelanggan kami.
+          </p>
+        </div>
+        <div class="service-item">
+          <img src="images/service3.png" alt="Layanan 3" />
+          <h3>Layanan 3</h3>
+          <p>
+            Penjelasan tentang layanan 3 yang kami tawarkan kepada
+            pelanggan kami.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Function to open modal for each project
-        function openModal(modalId) {
-            var modal = document.getElementById(modalId);
-            modal.style.display = 'flex';
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <h2>Portofolio Kami</h2>
+      <div class="portfolio-wrapper">
+        <div class="portfolio-item" onclick="openModal('portfolio1')">
+          <img src="LOGO ALPRO.png" alt="Portofolio 1" />
+        </div>
+        <div class="portfolio-item" onclick="openModal('portfolio2')">
+          <img src="LOGO dR.jpg" alt="Portofolio 2" />
+        </div>
+        <div class="portfolio-item" onclick="openModal('portfolio3')">
+          <img src="finisia.png" alt="Portofolio 3" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Portfolio 1 -->
+  <div id="portfolio1" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('portfolio1')">&times;</span>
+      <button class="modal-prev" onclick="prevImage('portfolio1')">&#10094;</button>
+      <button class="modal-next" onclick="nextImage('portfolio1')">&#10095;</button>
+      <img src="giias15.jpg" alt="Portofolio 1" class="active" />
+      <img src="giias16.jpg" alt="Portofolio 1" />
+      <img src="giias17.jpg" alt="Portofolio 1" />
+      <img src="GIIAS18.jpg" alt="Portofolio 1" />
+      <img src="rei.jpg" alt="Portofolio 1" />
+      <img src="karangtaruna.jpg" alt="Portofolio 1" />
+      <img src="FEED BMO 1 copy.jpg" alt="Portofolio 1" />
+    </div>
+  </div>
+
+  <!-- Modal for Portfolio 2 -->
+  <div id="portfolio2" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('portfolio2')">&times;</span>
+      <button class="modal-prev" onclick="prevImage('portfolio2')">&#10094;</button>
+      <button class="modal-next" onclick="nextImage('portfolio2')">&#10095;</button>
+      <img src="dr1.jpg" alt="Portofolio 2" class="active" />
+      <img src="dr2.jpg" alt="Portofolio 2" />
+      <img src="dr3.jpg" alt="Portofolio 2" />
+      <img src="dr4.jpg" alt="Portofolio 2" />
+      <img src="dr5.jpg" alt="Portofolio 2" />
+      <img src="dr6.jpg" alt="Portofolio 2" />
+    </div>
+  </div>
+
+  <!-- Modal for Portfolio 3 -->
+  <div id="portfolio3" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal('portfolio3')">&times;</span>
+      <button class="modal-prev" onclick="prevImage('portfolio3')">&#10094;</button>
+      <button class="modal-next" onclick="nextImage('portfolio3')">&#10095;</button>
+      <img src="up1.jpg" alt="Portofolio 3" class="active" />
+      <img src="halomakassar.jpg" alt="Portofolio 3" />
+      <img src="anakmudapalsu.jpg" alt="Portofolio 3" />
+      <img src="keluarmain.jpg" alt="Portofolio 3" />
+      <img src="up2.jpg" alt="Portofolio 3" />
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Kontak Kami</h2>
+      <p>
+        Hubungi kami untuk informasi lebih lanjut atau jika Anda memiliki
+        pertanyaan tentang layanan kami.
+      </p>
+      <!-- Form Kontak atau informasi kontak -->
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Fungsi untuk membuka modal
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'flex';
+    }
+
+    // Fungsi untuk menutup modal
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Fungsi untuk navigasi gambar
+    function showImage(modalId, index) {
+        var modal = document.getElementById(modalId);
+        var images = modal.querySelectorAll('.modal-content img');
+        if (index >= images.length) index = 0;
+        if (index < 0) index = images.length - 1;
+        images.forEach((img, i) => img.classList.toggle('active', i === index));
+        modal.currentIndex = index;
+    }
+
+    function prevImage(modalId) {
+        var modal = document.getElementById(modalId);
+        showImage(modalId, (modal.currentIndex || 0) - 1);
+    }
+
+    function nextImage(modalId) {
+        var modal = document.getElementById(modalId);
+        showImage(modalId, (modal.currentIndex || 0) + 1);
+    }
+
+    // Event listener untuk menutup modal ketika klik di luar konten modal
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = 'none';
         }
-
-        // Function to close modal
-        var closeButtons = document.getElementsByClassName('close');
-        for (var i = 0; i < closeButtons.length; i++) {
-            closeButtons[i].onclick = function () {
-                this.parentElement.style.display = 'none';
-            };
-        }
-
-        // Close modal if user clicks anywhere outside of the modal content
-        window.onclick = function (event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-
-        // Add event listeners to the project logos
-        document.getElementById('projectLogo1').addEventListener('click', function () {
-            openModal('galleryModal1');
-        });
-        document.getElementById('projectLogo2').addEventListener('click', function () {
-            openModal('galleryModal2');
-        });
-        document.getElementById('projectLogo3').addEventListener('click', function () {
-            openModal('galleryModal3');
-        });
-    </script>
-</body>
-
-</html>
-
+    }
+  </script>
 </body>
 </html>
