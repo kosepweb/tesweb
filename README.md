@@ -42,7 +42,7 @@
     header {
         background: #fff;
         padding: px 0;
-        position: fixed;
+        position: center;
         width: 100%;
         top: 0;
         z-index: 100;
@@ -352,7 +352,7 @@
     <div class="container" style="display: flex; align-items: center;">
       <img src="logo-gui.png" alt="Logo Perusahaan" class="logo" />
       <div class="company-name" style="margin-left: 15px;">
-        <h1></h1>
+        <h1>PT. GHAISAN UTAMA INDOMEDIA</h1>
       </div>
       <nav style="margin-left: auto;">
         <ul>
