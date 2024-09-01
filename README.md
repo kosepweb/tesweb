@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -41,7 +40,7 @@
     /* Header */
     header {
         background: #fff;
-        padding: 20px 0;
+        padding: 0px 0;
         position: fixed;
         width: 100%;
         top: 0;
@@ -350,7 +349,7 @@
   <!-- Header -->
   <header>
     <div class="container">
-      <img src="images/logo.png" alt="Logo Perusahaan" class="logo" />
+      <img src="logo-gui.png" alt="Logo Perusahaan" class="logo" />
       <nav>
         <ul>
           <li><a href="#home">Beranda</a></li>
@@ -390,30 +389,27 @@
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
-      <h2>Layanan Kami</h2>
+      <h2>Services</h2>
       <div class="services-wrapper">
         <div class="service-item">
           <img src="icon2.png" alt="Layanan 1" />
-          <h3>Layanan 1</h3>
+          <h3>Event Organizer Services</h3>
           <p>
-            Penjelasan tentang layanan 1 yang kami tawarkan kepada
-            pelanggan kami.
+            DIdirikan tahun 2009, dan sampai sekarang telah menjadi partner terpercaya oleh banyak perusahaan dan pribadi, untuk keperluan event organizing. Mulai dari acara formal ataupun non-formal yang selalu berhasil meninggalkan kesan tersendiri bagi client
           </p>
         </div>
         <div class="service-item">
           <img src="icon23.png" alt="Layanan 2" />
-          <h3>Layanan 2</h3>
+          <h3>Construction Serice</h3>
           <p>
-            Penjelasan tentang layanan 2 yang kami tawarkan kepada
-            pelanggan kami.
+            Didirikan ditahun 2012 sampai sekarang, didukung tim teknis dan arsitek berpengalaman, menjadi Konsultan Perencanaan serta Pelaksanaan Konstruksi Perumahaan, Pengelolaan Real Estate, Renovasi Rumah dan Kantor Eksterior/Interior
           </p>
         </div>
         <div class="service-item">
           <img src="icon3.png" alt="Layanan 3" />
-          <h3>Layanan 3</h3>
+          <h3>Cinematography Service</h3>
           <p>
-            Penjelasan tentang layanan 3 yang kami tawarkan kepada
-            pelanggan kami.
+            Didirikan ditahun 2015, dan sampai sekarang telah membuat beberapa film layar lebar dengan jumlah penoton yang lebih dari lima ratus ribu orang. Disamping itu Finisia, juga telah memproduksi beberapa video, berupa compay profile, comercial dan lain-lain.
           </p>
         </div>
       </div>
