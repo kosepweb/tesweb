@@ -393,7 +393,7 @@
       <h2>Layanan Kami</h2>
       <div class="services-wrapper">
         <div class="service-item">
-          <img src="images/service1.png" alt="Layanan 1" />
+          <img src="icon2.png" alt="Layanan 1" />
           <h3>Layanan 1</h3>
           <p>
             Penjelasan tentang layanan 1 yang kami tawarkan kepada
@@ -401,7 +401,7 @@
           </p>
         </div>
         <div class="service-item">
-          <img src="images/service2.png" alt="Layanan 2" />
+          <img src="icon23.png" alt="Layanan 2" />
           <h3>Layanan 2</h3>
           <p>
             Penjelasan tentang layanan 2 yang kami tawarkan kepada
@@ -409,7 +409,7 @@
           </p>
         </div>
         <div class="service-item">
-          <img src="images/service3.png" alt="Layanan 3" />
+          <img src="icon3.png" alt="Layanan 3" />
           <h3>Layanan 3</h3>
           <p>
             Penjelasan tentang layanan 3 yang kami tawarkan kepada
