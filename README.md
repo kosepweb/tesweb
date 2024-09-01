@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
@@ -40,7 +41,7 @@
     /* Header */
     header {
         background: #fff;
-        padding: 0px 0;
+        padding: px 0;
         position: fixed;
         width: 100%;
         top: 0;
@@ -348,9 +349,12 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="container">
+    <div class="container" style="display: flex; align-items: center;">
       <img src="logo-gui.png" alt="Logo Perusahaan" class="logo" />
-      <nav>
+      <div class="company-name" style="margin-left: 15px;">
+        <h1>PT. GHAISAN UTAMA INDOMEDIA</h1>
+      </div>
+      <nav style="margin-left: auto;">
         <ul>
           <li><a href="#home">Beranda</a></li>
           <li><a href="#about">Tentang Kami</a></li>
@@ -363,17 +367,15 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
+  <section id="home" class="hero" style="background: url('foto1.jpg') no-repeat center center/cover;">
     <div class="container">
-      <h1>Selamat Datang di <span>Perusahaan Anda</span></h1>
-      <p>
-        Kami menyediakan solusi terbaik untuk kebutuhan bisnis Anda dengan
-        pelayanan profesional dan terpercaya.
-      </p>
-      <a href="#contact" class="btn">Hubungi Kami</a>
+        <h1> <span></span></h1>
+        <p>
+        </p>
+        <a href="#contact" class="btn">Hubungi Kami</a>
     </div>
-  </section>
-
+</section>
+  
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container about-content">
