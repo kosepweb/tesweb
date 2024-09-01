@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nama Perusahaan Anda</title>
+  <title>Ghaisan Utama Indomedia</title>
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -352,7 +352,7 @@
     <div class="container" style="display: flex; align-items: center;">
       <img src="logo-gui.png" alt="Logo Perusahaan" class="logo" />
       <div class="company-name" style="margin-left: 15px;">
-        <h1>PT. GHAISAN UTAMA INDOMEDIA</h1>
+        <h1></h1>
       </div>
       <nav style="margin-left: auto;">
         <ul>
