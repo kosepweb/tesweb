@@ -352,7 +352,7 @@
     <div class="container" style="display: flex; align-items: center;">
       <img src="logo-gui.png" alt="Logo Perusahaan" class="logo" />
       <div class="company-name" style="margin-left: 15px;">
-        <h1>PT. GHAISAN UTAMA INDOMEDIA</h1>
+        <h1></h1>
       </div>
       <nav style="margin-left: auto;">
         <ul>
