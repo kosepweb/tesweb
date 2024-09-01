@@ -1,9 +1,9 @@
-
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghaisan Utama Indomedia</title>
+  <title>Nama Perusahaan Anda</title>
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,8 +41,8 @@
     /* Header */
     header {
         background: #fff;
-        padding: px 0;
-        position: center;
+        padding: 0px 0;
+        position: fixed;
         width: 100%;
         top: 0;
         z-index: 100;
@@ -133,21 +133,29 @@
     }
     
     /* About Section */
-    .about {
-        background-color: #f9f9f9;
-        padding: 80px 0;
-    }
-    
-    .about-content {
-        text-align: center;
-        animation: fadeIn 1s ease-in-out;
-    }
-    
-    .about p {
-        margin-bottom: 20px;
-        color: #666;
-    }
-    
+.about {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.about-content {
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about p {
+    margin: 0 auto;
+    max-width: 800px;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
     /* Services Section */
     .services {
         padding: 80px 0;
@@ -376,17 +384,47 @@
     </div>
 </section>
   
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container about-content">
-      <h2>Tentang Kami</h2>
-      <p>
-        Kami adalah perusahaan yang berkomitmen untuk memberikan layanan
-        terbaik dan solusi inovatif untuk kebutuhan bisnis Anda. Tim kami
-        terdiri dari para ahli di berbagai bidang yang siap membantu Anda.
-      </p>
-    </div>
-  </section>
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+      <div class="about-content">
+          <h2>Tentang Kami</h2>
+          <p>
+              Pada tahun 2009, bendera ALPRODUCTION berbadan hukum dengan bentuk Perusahaan
+              Perseorangan. Berkonstrasi di bidang Event Organizer dan Profesional Exhibition
+              Organizer dengan pengalaman, kemampuan, dan skil dari personil sumber daya manusia
+              yang terlibat sejak awal berdiri. Kami berkembang ke berbagai bidang:
+              <br><br>
+              - 2011: Terbentuk Media Majalah, Eventku Magazine
+              <br>
+              - 2012: Terbentuk designeRoom, Konsultan Perencana & Konstruksi, Konsultan Pengawasan,
+              Pelaksana Konstruksi, Pengelolaan Real Estate, Pekerjaan Interior/eksterior
+              <br>
+              - 2013: Terbentuk CV. GHAISAN UTAMA INDOMEDIA yang menaungi berbagai jenis usaha
+              di bidang entertain dan konstruksi
+              <br>
+              - 2014: Terbentuk jasa Multimedia (Foto, Video & Desain Grafis)
+              <br>
+              - 2015: Terbentuk Finisia Production, Production House yang memproduksi Film
+              Layar Lebar, Series & Iklan Cinematography
+              <br>
+              - 2018: Terbentuk KopiBatas/KOBA
+              <br>
+              - 2018: Terbentuk PT. GHAISAN MAHARGA PERKASA & PT. GHAISAN UTAMA INDOPRIMA
+              <br>
+              - 2020: Terbentuk Yayasan Insan Sahasra Zawawi, dengan brand Gerakan 1.000 Kebaikan
+              <br><br>
+              Dengan jaringan yang luas, profesionalisme kerja, serta komitmen atas setiap pelayanan,
+              kami percaya mampu memberikan produk dan jasa berkualitas, konsisten, dan bernilai tambah
+              demi tercapainya tujuan bersama. Didukung oleh sumber daya manusia dengan kemampuan dan
+              pengalaman tinggi, GHAISAN UTAMA INDOMEDIA siap menyediakan berbagai jasa di bidang
+              Konstruksi, Multimedia, dan Event Organizer dengan prinsip kemitraan yang mengedepankan
+              kualitas dan kepuasan.
+          </p>
+      </div>
+  </div>
+</section>
+
 
   <!-- Services Section -->
   <section id="services" class="services">
@@ -402,7 +440,7 @@
         </div>
         <div class="service-item">
           <img src="icon23.png" alt="Layanan 2" />
-          <h3>Construction Serice</h3>
+          <h3>Construction Service</h3>
           <p>
             Didirikan ditahun 2012 sampai sekarang, didukung tim teknis dan arsitek berpengalaman, menjadi Konsultan Perencanaan serta Pelaksanaan Konstruksi Perumahaan, Pengelolaan Real Estate, Renovasi Rumah dan Kantor Eksterior/Interior
           </p>
